@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Skillset Manager - Vue</title>
+        <link rel='stylesheet' href='css/style.css'>
+    </head>
+    <body>
+        <div id="app">
+            <h1 v-once>{{name}}</h1>
+            <div class='container'>
+                <div class='holder'>
+                    <ul>
+                        <li v-for='skill in my_skills'>{{skill}}
+                            <button v-on:click='removeSkill' class='delete-btn'>Delete</button>
+                        </li>
+                    </ul>
+                </div>
+        
+                <h2>Add a Skill</h2>
+                <div class='form-box'>
+                    <input v-bind:type='inputType' v-bind:class='formField' required>
+                    <button type='button' v-on:click='addSkill'>Add to SkillSet</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

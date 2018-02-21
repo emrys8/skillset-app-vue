@@ -1,0 +1,93 @@
+ @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  font-family: Helvetica, Arial, sans-serif;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+  background: #eeeeee;
+  margin: 0 auto 60px;
+}
+
+h1, h2, h3 {
+  font-family: 'Bree Serif', serif;
+  padding: 0 1rem;
+}
+
+#app {
+  background: #6db8e8;
+  width: 60%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 20px;
+  font-size: 1.3rem;
+  background-color: #E0EDF4;
+  border-left: 4px solid black;
+  margin-bottom: 2px;
+  color: #3E5252;
+}
+
+p {
+  text-align: center;
+  padding: 30px 0;
+  color: gray;
+}
+
+.brighten {
+  color: #eee;
+}
+
+.holder {
+  background: #fff;
+}
+
+.container {
+  box-shadow: 0px 0px 40px lightgray;
+}
+
+.form-box {
+  padding: 0 1rem;
+}
+
+input {
+  width: 100%;
+  border: 1px solid;
+  padding: 0.8rem;
+  margin-bottom: 5px;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid none;
+}
+
+.form-box button {
+  margin-bottom: calc(5px + 10px); /* just for practice */
+}
+
+
+button:hover {
+  background-color: lightgrey;
+}
+
+.delete-btn {
+  background: #d62e0c;
+  color: #fff;
+}
+
+.alert {
+/*   color: blue; */
+}
