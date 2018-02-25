@@ -6,6 +6,7 @@
         <title>Skillset Manager - Vue</title>
         <link rel='stylesheet' href='css/style.css'>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://unpkg.com/vee-validate@2.0.0-rc.7"></script>
     </head>
     <body>
         <div id="app">
@@ -21,8 +22,11 @@
         
                 <h2>Add a Skill</h2>
                 <div class='form-box'>
-                    <input v-bind:type='inputType' v-bind:class='formField' required>
-                    <button type='button' v-on:click='addSkill'>Add to SkillSet</button>
+                    <form @submit.prevent='addSkill'>
+                        <input v-bind:type='inputType' v-bind:class='formField' v-model='skill_name' v-validate='{ required: true, min: 3, alpha_num: true }' name='skill_name'>
+                        <span v-show="errors.has('skill_name')" class="error-alert">{{ errors.first('skill_name') }}</span>
+                        <button type='button' v-on:click='addSkill' class="add-btn">Add to SkillSet</button>
+                    </form>
                 </div>
             </div>
         </div>

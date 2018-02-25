@@ -1,16 +1,18 @@
 $(function () {
+
+    Vue.use(VeeValidate);
     var app = new Vue({
         el: '#app',
         data: {
             name: 'Skills',
+            skill_name: '',
             my_skills: [
                 'HTML',
                 'CSS',
                 'JavaScript',
                 'jQuery',
                 'React',
-                'Vue.js',
-                'UI/UX Engineering'
+                'Vue.js'
             ],
 
             someClass: false,
@@ -24,8 +26,16 @@ $(function () {
         methods: {
             addSkill: function () {
                 
-                var skill = $("input").val();
-                this.my_skills.push(skill);
+                // var skill = $("input").val();
+                this.$validator.validateAll()
+                .then((result) => {
+                    if (result) {
+                        this.my_skills.push(this.skill_name);
+                        this.skill_name = '';
+                    } else {
+
+                    }
+                })
             },
 
             removeSkill: function (e) {
